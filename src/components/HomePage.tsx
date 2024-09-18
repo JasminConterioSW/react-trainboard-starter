@@ -1,11 +1,14 @@
 import React from 'react';
-import Dropdown from './Dropdown';
+import Selector from './Selector';
 
 const HomePage: React.FC = () => {
+
     return (
         <div>
-            Lovely home page
-            <Dropdown dropdownName = "Dropdown1"/>
+            <h1>Lovely home page</h1>
+            <Selector dropdownName = "Station From"/>
+            <Selector dropdownName = "Station To"/>
+            <button>Stations picked</button>
         </div>
     );
 };
