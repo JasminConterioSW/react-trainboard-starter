@@ -9,7 +9,7 @@ interface Props {
 
 const Selector: React.FC<Props> = ({ dropdownName, options, id }) => {
     return (
-        <div>
+        <>
             <h2>{dropdownName}</h2>
             <select id = { id } name = { dropdownName.replace(/\s/g, '') }>
                 {options.map(option => (<option
@@ -17,7 +17,7 @@ const Selector: React.FC<Props> = ({ dropdownName, options, id }) => {
                     value = { option.crs }>{option.name}
                 </option>))}
             </select>
-        </div>
+        </>
     );
 };
 
