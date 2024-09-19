@@ -1,22 +1,23 @@
 import React from 'react';
+import { StationDetails } from '../models/stationDetails';
 
 interface Props {
     dropdownName: string;
-    options: string[];
+    options: StationDetails[];
+    id: string;
 }
 
-const Selector: React.FC<Props> = ({ dropdownName, options }) => {
+const Selector: React.FC<Props> = ({ dropdownName, options, id }) => {
     return (
         <div>
             <h2>{dropdownName}</h2>
-            <select>
+            <select id = { id } name = { dropdownName.replace(/\s/g, '') }>
                 {options.map(option => (<option
-                    key = { option }
-                    value = { option } >{option}
+                    key = { option.crs }
+                    value = { option.crs }>{option.name}
                 </option>))}
             </select>
         </div>
-
     );
 };
 
